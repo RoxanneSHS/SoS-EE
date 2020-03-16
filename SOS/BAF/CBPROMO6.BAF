@@ -1,0 +1,17 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    GiveItemCreate("CBMAYRSD",Myself,0,0,0)
+    SetGlobal("CbPartyLeaderBecomesMayor","GLOBAL",2)
+    EndCutSceneMode()
+    AddexperienceParty(20000)
+    AddXPObject(Player1,10000)
+    AddJournalEntry(@5091,QUEST_DONE)
+    EraseJournalEntry(@5092)
+    EraseJournalEntry(@5093)
+    EraseJournalEntry(@5094)
+    SaveGame(0)
+END
+

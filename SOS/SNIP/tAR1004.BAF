@@ -1,0 +1,21 @@
+IF
+	Global("CbSelenceTaskOne","GLOBAL",1)
+	!Global("CbNobleServantSpawned","AR1004",1)
+THEN
+	RESPONSE #100
+		CreateCreature("CBWLSERV",[707.583],13)
+		SetGlobal("CbNobleServantSpawned","AR1004",1)
+ 	        Continue()
+END
+
+IF
+        Global("CbGetRidOfWilliamsServant","AR1004",0)
+        PartyHasItem("CBSHGOLD")
+THEN
+	RESPONSE #100
+		SetGlobal("CbGetRidOfWilliamsServant","AR1004",1)
+ 	        ActionOverride("CBWLSERV",EscapeArea())
+END
+
+
+

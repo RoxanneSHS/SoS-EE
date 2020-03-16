@@ -1,0 +1,11 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("CBSOUSGT")
+    SetGlobal("CbFarmPatrolDuty","AR4286",6)
+    GiveItemCreate("Dagg16",Player1,1,0,0)
+    SetGlobal("CbPartyIsInSoubarMilitia","GLOBAL",2)
+    EndCutSceneMode()
+END
+

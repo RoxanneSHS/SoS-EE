@@ -1,0 +1,11 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("CBGAIUS1") 
+    SetGlobal("CbPartyIsInSoubarMilitia","GLOBAL",7)
+    EndCutSceneMode()
+    AddexperienceParty(10000)
+    SaveGame(0)
+END
+

@@ -1,0 +1,116 @@
+IF
+	TimeGT(DAWN_END)
+	TimeLT(DUSK_START)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("CbTrainingGuardsBedtime","ar4351",0)
+		Continue()
+END
+
+IF
+	TimeGT(20)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("CbTrainingGuardsBedtime","ar4351",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	HasItem("CBMILT01",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT01")  // No such index
+END
+
+IF
+	HasItem("CBMILT02",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT02")  // No such index
+END
+
+IF
+	HasItem("CBMILT03",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT03")  // No such index
+END
+
+IF
+	HasItem("CBMILT04",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT04")  // No such index
+END
+
+IF
+	HasItem("CBMILT11",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT11")  // No such index
+END
+
+IF
+	HasItem("CBMILT12",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT12")  // No such index
+END
+
+IF
+	HasItem("CBMILT13",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT13")  // No such index
+END
+
+IF
+	HasItem("CBMILT14",Myself)  // No such index
+THEN
+	RESPONSE #100
+		DestroyItem("CBMILT14")  // No such index
+END
+
+IF
+	HasItem("B1-2",Myself)  // Skull
+THEN
+	RESPONSE #100
+		DestroyItem("B1-2")  // Skull
+END
+
+IF
+	Global("CbTrainingGuardsBedtime","ar4351",1)
+THEN
+	RESPONSE #100
+		Deactivate(Myself)
+END
+
+IF
+	Global("CbTrielThrust","AR4351",1)
+	Global("CbTrielSlash","AR4351",1)
+	Global("CbTrielOverhand","AR4351",1)
+	Global("CbTrielRanged","AR4351",1)
+	Global("CbStopInitialTrainingOption","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CbStopInitialTrainingOption","LOCALS",1)
+END
+
+IF
+	Global("CbTrainForm4","AR4351",4)
+	Global("CbTrainForm6","AR4351",4)
+	Global("CbTrainForm9","AR4351",4)
+THEN
+	RESPONSE #100
+		SetGlobal("CbStopSecondTrainingOption","LOCALS",1)
+END
+
+IF
+	HasItem("B1-2",Myself)  // Skull
+THEN
+	RESPONSE #100
+		DestroyItem("B1-2")  // Skull
+END
+

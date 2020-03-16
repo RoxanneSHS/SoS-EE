@@ -1,0 +1,744 @@
+BACKUP ~SOS/BACKUP~
+
+AUTHOR ~Charles Bisson, Horred The Plague (WeiDU), King Diamond (WeiDU revision), Weigo + Roxanne (EE revision)~  NO_IF_EVAL_BUG
+
+VERSION ~v3~
+
+AUTO_TRA ~SOS/Language/%s~
+
+ALWAYS
+  ACTION_IF (GAME_IS ~eet~) BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+  
+<<<<<<<< .../blank.txt
+>>>>>>>>
+	ACTION_IF ~%WEIDU_OS%~ STRING_EQUAL_CASE ~win32~ BEGIN
+		OUTER_SPRINT os_slash ~\~
+		OUTER_SPRINT exe ~.exe~
+		OUTER_SPRINT WEIDU_EXECUTABLE ~setup-SoS.exe~
+	END ELSE ACTION_IF ~%WEIDU_OS%~ STRING_EQUAL_CASE ~osx~ BEGIN
+		OUTER_SPRINT os_slash ~/~
+		OUTER_SPRINT exe ~~
+		OUTER_SPRINT WEIDU_EXECUTABLE ~./SoS/weidu~
+	END
+	OUTER_SPRINT ~tileconv~ ~SoS%os_slash%bin%os_slash%%WEIDU_OS%%os_slash%tileconv%exe%~
+	
+	ACTION_IF ENGINE_IS ~bgee bg2ee~ BEGIN
+		COPY - ~weidu.conf~ ~.../weidu.conf~
+			READ_2DA_ENTRY 0 2 3 "lang_dir"
+		ACTION_IF NOT ~%LANGUAGE%~ STR_EQ ~english~ BEGIN
+			ACTION_DEFINE_ASSOCIATIVE_ARRAY charsetsTable BEGIN
+				"german" => "CP1252"
+				"english" => "CP1252"
+				"french" => "CP1252"
+				"italian" => "CP1252"
+				"polish" => "CP1250"
+				"russian" => "CP1251"
+				"castilian" => "CP1252"
+				"spanish" => "CP1252"
+			END
+			ACTION_DEFINE_ARRAY charsetsReloadArray BEGIN setup END
+			ACTION_DEFINE_ARRAY charsetsNoConvertArray BEGIN setup-ee END
+			LAF ~HANDLE_CHARSETS~
+				INT_VAR
+				infer_charsets = 0
+				STR_VAR
+				tra_path = "SoS/language"
+				iconv_path = "SoS/bin/win32/iconv" //available as part of the base system on OS X and GNU/Linux
+				charset_table = charsetsTable
+				reload_array = charsetsReloadArray
+				noconvert_array = charsetsNoConvertArray
+			END
+		END
+		COPY ~%MOD_FOLDER%/Worldmap/%LANGUAGE%/fl#utf8_worldmap.tra~ ~%MOD_FOLDER%/Worldmap/%LANGUAGE%/worldmap.tra~
+		LOAD_TRA ~SoS/language/%LANGUAGE%/setup-ee.tra~
+	END
+END
+
+LANGUAGE ~English~
+         ~English~
+         ~SOS/Language/English/setup.tra~
+
+LANGUAGE ~Russian (by aerie-ru.info team)~
+         ~Russian~
+         ~SOS/Language/Russian/setup.tra~
+
+LANGUAGE ~German (by Leonardo Watson)~
+         ~German~
+         ~SOS/Language/German/setup.tra~
+
+LANGUAGE ~Spanish (by SirLancelot & Co)~
+         ~Spanish~
+         ~SOS/Language/Spanish/setup.tra~
+
+LANGUAGE ~Italian (Ilot & Co)~
+         ~Italian~
+         ~SOS/Language/Italian/setup.tra~
+
+BEGIN @20000
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ ~This version is for BG2EE or EET~
+
+COPY ~SOS/SFX~  ~override~
+COPY ~SOS/RULE~ ~override~
+COPY ~SOS/BAM~  ~override~
+COPY ~SOS/MOS~  ~override~
+COPY ~SOS/WED~  ~override~
+
+ADD_JOURNAL @5090 @5091 @5092 @5093 @5094 @5095 @50100 @50101 @50120 @50121 @50122 @50123 @50103 @50105 @50124 @50125 @50126 @50127 @50106 @50107 @50108 @50102 @50104 @50111 @50128 @50110 @50113 @50114 @50208 @50115 @50200 @50202 @50201 @50203 @50204 @50205 @50206 @50207
+
+
+STRING_SET ~4519~  @9048
+STRING_SET ~4925~  @9087
+STRING_SET ~4928~  @9088
+STRING_SET ~4939~  @9089
+STRING_SET ~4946~  @9090
+STRING_SET ~4952~  @9091
+STRING_SET ~11158~ @9112
+STRING_SET ~4986~  @9131
+
+APPEND ~MASTAREA.2DA~
+~AR4201 value
+AR4202 value
+AR4203 value
+AR4204 value
+AR4205 value
+AR4206 value
+AR4210 value
+AR4211 value
+AR4212 value
+AR4219 value
+AR4220 value
+AR4230 value
+AR4232 value
+AR4240 value
+AR4241 value
+AR4242 value
+AR4243 value
+AR4244 value
+AR4245 value
+AR4246 value
+AR4247 value
+AR4248 value
+AR4249 value
+AR4250 value
+AR4251 value
+AR4252 value
+AR4253 value
+AR4254 value
+AR4255 value
+AR4256 value
+AR4257 value
+AR4258 value
+AR4259 value
+AR4260 value
+AR4261 value
+AR4262 value
+AR4263 value
+AR4264 value
+AR4265 value
+AR4266 value
+AR4267 value
+AR4268 value
+AR4269 value
+AR4270 value
+AR4271 value
+AR4272 value
+AR4273 value
+AR4274 value
+AR4275 value
+AR4276 value
+AR4277 value
+AR4278 value
+AR4279 value
+AR4280 value
+AR4281 value
+AR4282 value
+AR4283 value
+AR4284 value
+AR4285 value
+AR4286 value
+AR4287 value
+AR4288 value
+AR4289 value
+AR4290 value
+AR4291 value
+AR4292 value
+AR4293 value
+AR4294 value
+AR4295 value
+AR4296 value
+AR4298 value
+AR4299 value
+AR4301 value
+AR4302 value
+AR4303 value
+AR4304 value
+AR4305 value
+AR4306 value
+AR4307 value
+AR4308 value
+AR4309 value
+AR4310 value
+AR4311 value
+AR4312 value
+AR4313 value
+AR4320 value
+AR4325 value
+AR4330 value
+AR4340 value
+AR4350 value
+AR4351 value
+AR4360 value
+AR4365 value
+AR4370 value~
+UNLESS ~AR4370~
+
+APPEND ~PDIALOG.2DA~
+~SELENCE      SELENCEP           SELENCEJ          ***            ***                ***                   ***                   ***
+CHARLOTT     CHARLOTP           CHARLOTJ          ***            ***                ***                   ***                   ***
+BOLIVAR      BOLIVARP           BOLIVARJ          ***            ***                ***                   ***                   ***
+TOMASTM      TOMASTOP           TOMASTOJ          ***            ***                ***                   ***                   ***~
+UNLESS ~SELENCE~
+
+INCLUDE ~SoS/lib/tooltip.tpa~
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL001~ tooltips = ~@20028 @20029~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL006~ tooltips = ~@20030 @20031~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL016~ tooltips = ~@20032 @20033 @20034~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL028~ tooltips = ~@20035 @20036~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL034~ tooltips = ~@20037~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL035~ tooltips = ~@20038 @20039~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL043~ tooltips = ~@20040 @20041~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBCL057~ tooltips = ~@20042~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBDMNSTF~ tooltips = ~@20043 @20044 @20045~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBLFET~ tooltips = ~@20046 @20047~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBSLDR~ tooltips = ~@20048 @20049~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBSLDV~ tooltips = ~@20050 @20051~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBSLSK~ tooltips = ~@20052 @20053~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBSLSN~ tooltips = ~@20054 @20055~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBHBSLZP~ tooltips = ~@20056 @20039~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBRJR005~ tooltips = ~@20057 @20039~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBRJR009~ tooltips = ~@20058 @20059~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBRJR011~ tooltips = ~@20060~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBRJR020~ tooltips = ~@20061 @20062 @20063~ END
+LAF ~ADD_ITEM_TOOLTIPS~ STR_VAR item = ~CBSTFSKL~ tooltips = ~@20064 @20065 @20066~ END
+
+COPY_EXISTING ~KIT.IDS~ ~override~
+  REPLACE_TEXTUALLY ~.*\bTRUECLASS\b~              ~0x4000 TRUECLASS~
+  REPLACE_TEXTUALLY ~.*\bBERSERKER\b~              ~0x4001 BERSERKER~
+  REPLACE_TEXTUALLY ~.*\bWIZARDSLAYER\b~           ~0x4002 WIZARDSLAYER~
+  REPLACE_TEXTUALLY ~.*\bKENSAI\b~                 ~0x4003 KENSAI~
+  REPLACE_TEXTUALLY ~.*\bCAVALIER\b~               ~0x4004 CAVALIER~
+  REPLACE_TEXTUALLY ~.*\bINQUISITOR\b~             ~0x4005 INQUISITOR~
+  REPLACE_TEXTUALLY ~.*\bUNDEADHUNTER\b~           ~0x4006 UNDEADHUNTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ABJURER\b~     ~0x0040 MAGESCHOOL_ABJURER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_CONJURER\b~    ~0x0080 MAGESCHOOL_CONJURER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_DIVINER\b~     ~0x0100 MAGESCHOOL_DIVINER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ENCHANTER\b~   ~0x0200 MAGESCHOOL_ENCHANTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ILLUSIONIST\b~ ~0x0400 MAGESCHOOL_ILLUSIONIST~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x4000 MAGESCHOOL_GENERALIST~
+  REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
+  REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
+  REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
+  REPLACE_TEXTUALLY ~.*\bASSASIN\b~                ~0x400A ASSASIN~
+  REPLACE_TEXTUALLY ~.*\bBOUNTYHUNTER\b~           ~0x400B BOUNTYHUNTER~
+  REPLACE_TEXTUALLY ~.*\bSWASHBUCKLER\b~           ~0x400C SWASHBUCKLER~
+  REPLACE_TEXTUALLY ~.*\bBLADE\b~                  ~0x400D BLADE~
+  REPLACE_TEXTUALLY ~.*\bJESTER\b~                 ~0x400E JESTER~
+  REPLACE_TEXTUALLY ~.*\bSKALD\b~                  ~0x400F SKALD~
+  REPLACE_TEXTUALLY ~.*\bGODTALOS\b~               ~0x4013 GODTALOS~
+  REPLACE_TEXTUALLY ~.*\bGODHELM\b~                ~0x4014 GODHELM~
+  REPLACE_TEXTUALLY ~.*\bGODLATHANDER\b~           ~0x4015 GODLATHANDER~
+  REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+  REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+  REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x40000000 BARBARIAN~
+  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x80000000 WILDMAGE~
+  BUT_ONLY
+
+APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~\bTRUECLASS\b~
+APPEND ~kit.ids~ ~0x40000000 BARBARIAN~ UNLESS ~\bBARBARIAN\b~
+APPEND ~kit.ids~ ~0x80000000 WILDMAGE~ UNLESS ~\bWILDMAGE\b~
+
+APPEND ~SPELL.IDS~ ~2429 BELTYNS_BURNING_BLOOD~
+UNLESS ~2429 BELTYNS_BURNING_BLOOD~
+
+COPY ~SoS/ARE/AR4201.are~           ~override~
+COPY ~SoS/ARE/AR4202.ARE~           ~override~
+COPY ~SoS/ARE/AR4203.are~           ~override~
+COPY ~SoS/ARE/AR4204.are~           ~override~
+COPY ~SoS/ARE/AR4205.are~           ~override~
+COPY ~SoS/ARE/AR4206.are~           ~override~
+COPY ~SoS/ARE/AR4210.are~           ~override~
+
+COPY ~SoS/ARE/AR4211.ARE~           ~override~
+  SAY 0x11a8 @20074
+
+COPY ~SoS/ARE/AR4212.are~           ~override~
+COPY ~SoS/ARE/AR4219.ARE~           ~override~
+COPY ~SoS/ARE/AR4220.are~           ~override~
+
+COPY ~SoS/ARE/AR4230.are~           ~override~
+  SAY 0x1b88 @20075
+  SAY 0x1c4c @20076
+  SAY 0x1d10 @20077
+  SAY 0x1dd4 @20078
+  SAY 0x1e98 @20079
+  SAY 0x6370 @20080
+  SAY 0x63a4 @20081
+  SAY 0x63d8 @20078
+  SAY 0x640c @20077
+  SAY 0x6440 @20075
+  SAY 0x6474 @20079
+  SAY 0x64a8 @20076
+  SAY 0x64dc @20082
+
+COPY ~SoS/ARE/AR4232.are~           ~override~
+COPY ~SoS/ARE/AR4240.are~           ~override~
+COPY ~SoS/ARE/AR4241.are~           ~override~
+COPY ~SoS/ARE/AR4242.are~           ~override~
+COPY ~SoS/ARE/AR4243.are~           ~override~
+COPY ~SoS/ARE/AR4244.are~           ~override~
+COPY ~SoS/ARE/AR4245.are~           ~override~
+COPY ~SoS/ARE/AR4246.are~           ~override~
+COPY ~SoS/ARE/AR4247.are~           ~override~
+COPY ~SoS/ARE/AR4248.are~           ~override~
+COPY ~SoS/ARE/AR4249.are~           ~override~
+COPY ~SoS/ARE/AR4250.are~           ~override~
+COPY ~SoS/ARE/AR4251.are~           ~override~
+COPY ~SoS/ARE/AR4252.are~           ~override~
+COPY ~SoS/ARE/AR4253.are~           ~override~
+COPY ~SoS/ARE/AR4254.are~           ~override~
+COPY ~SoS/ARE/AR4255.are~           ~override~
+COPY ~SoS/ARE/AR4256.are~           ~override~
+COPY ~SoS/ARE/AR4257.are~           ~override~
+COPY ~SoS/ARE/AR4258.are~           ~override~
+COPY ~SoS/ARE/AR4259.are~           ~override~
+COPY ~SoS/ARE/AR4260.are~           ~override~
+COPY ~SoS/ARE/AR4261.are~           ~override~
+COPY ~SoS/ARE/AR4262.are~           ~override~
+COPY ~SoS/ARE/AR4263.are~           ~override~
+COPY ~SoS/ARE/AR4264.are~           ~override~
+COPY ~SoS/ARE/AR4265.are~           ~override~
+COPY ~SoS/ARE/AR4266.are~           ~override~
+COPY ~SoS/ARE/AR4267.are~           ~override~
+COPY ~SoS/ARE/AR4268.are~           ~override~
+COPY ~SoS/ARE/AR4269.are~           ~override~
+COPY ~SoS/ARE/AR4270.ARE~           ~override~
+COPY ~SoS/ARE/AR4271.are~           ~override~
+
+COPY ~SoS/ARE/AR4272.are~           ~override~
+  SAY 0xda8 @20083
+  SAY 0xe6c @20084
+  SAY 0xf30 @20085
+
+COPY ~SoS/ARE/AR4273.are~           ~override~
+COPY ~SoS/ARE/AR4274.are~           ~override~
+COPY ~SoS/ARE/AR4275.are~           ~override~
+COPY ~SoS/ARE/AR4276.are~           ~override~
+COPY ~SoS/ARE/AR4277.are~           ~override~
+COPY ~SoS/ARE/AR4278.are~           ~override~
+COPY ~SoS/ARE/AR4279.are~           ~override~
+COPY ~SoS/ARE/AR4280.are~           ~override~
+COPY ~SoS/ARE/AR4281.are~           ~override~
+COPY ~SoS/ARE/AR4282.are~           ~override~
+COPY ~SoS/ARE/AR4283.are~           ~override~
+COPY ~SoS/ARE/AR4284.are~           ~override~
+COPY ~SoS/ARE/AR4285.are~           ~override~
+COPY ~SoS/ARE/AR4286.are~           ~override~
+
+COPY ~SoS/ARE/AR4287.are~           ~override~
+  SAY 0x528 @20086
+  SAY 0x5ec @20086
+  SAY 0x6b0 @20086
+
+COPY ~SoS/ARE/AR4288.ARE~           ~override~
+COPY ~SoS/ARE/AR4289.are~           ~override~
+COPY ~SoS/ARE/AR4290.are~           ~override~
+COPY ~SoS/ARE/AR4291.are~           ~override~
+COPY ~SoS/ARE/AR4292.are~           ~override~
+COPY ~SoS/ARE/AR4293.are~           ~override~
+COPY ~SoS/ARE/AR4294.are~           ~override~
+COPY ~SoS/ARE/AR4295.are~           ~override~
+COPY ~SoS/ARE/AR4296.are~           ~override~
+COPY ~SoS/ARE/AR4298.are~           ~override~
+COPY ~SoS/ARE/AR4299.are~           ~override~
+
+COPY ~SoS/ARE/AR4370.are~           ~override~
+  SAY 0x3808 @20087
+  SAY 0x38cc @20087
+
+COPY ~SoS/ARE/AR4301.are~           ~override~
+COPY ~SoS/ARE/AR4302.are~           ~override~
+COPY ~SoS/ARE/AR4303.are~           ~override~
+COPY ~SoS/ARE/AR4304.are~           ~override~
+COPY ~SoS/ARE/AR4305.are~           ~override~
+COPY ~SoS/ARE/AR4306.are~           ~override~
+COPY ~SoS/ARE/AR4307.are~           ~override~
+
+COPY ~SoS/ARE/AR4308.are~           ~override~
+  SAY 0xfc8 @20088
+
+COPY ~SoS/ARE/AR4309.are~           ~override~
+COPY ~SoS/ARE/AR4310.are~           ~override~
+COPY ~SoS/ARE/AR4311.are~           ~override~
+COPY ~SoS/ARE/AR4312.are~           ~override~
+COPY ~SoS/ARE/AR4313.are~           ~override~
+COPY ~SoS/ARE/AR4320.are~           ~override~
+COPY ~SoS/ARE/AR4325.are~           ~override~
+COPY ~SoS/ARE/AR4330.are~           ~override~
+
+COPY ~SoS/ARE/AR4340.are~           ~override~
+  SAY 0x968 @20089
+  SAY 0xa2c @20089
+  SAY 0xaf0 @20089
+  SAY 0xbb4 @20089
+
+COPY ~SoS/ARE/AR4350.are~           ~override~
+COPY ~SoS/ARE/AR4351.are~           ~override~
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SPRINT "NBaldursGate_RinniesHouse_L2" "BG0007"
+END ELSE ACTION_IF GAME_IS ~bg2 tob bg2ee~ BEGIN
+    OUTER_SPRINT "NBaldursGate_RinniesHouse_L2" "AR0007"
+END ELSE ACTION_IF GAME_IS ~bgt~ BEGIN
+    OUTER_SPRINT "NBaldursGate_RinniesHouse_L2" "ARA007"
+END
+COPY ~SoS/ARE/AR4360.are~           ~override~
+    WRITE_ASCIIE 0x0018 ~%NBaldursGate_RinniesHouse_L2%~ #8
+    WRITE_ASCIIE 0x0024 ~%NBaldursGate_RinniesHouse_L2%~ #8
+    WRITE_ASCIIE 0x0030 ~%NBaldursGate_RinniesHouse_L2%~ #8
+    WRITE_ASCIIE 0x003c ~%NBaldursGate_RinniesHouse_L2%~ #8
+
+	COPY ~SoS/ARE/AR4365.are~           ~override~
+
+ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
+  COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
+   APPEND_FILE ~SOS/Worldmap/areas.tbl~
+
+  COPY ~Worldmap/map_mods_links.tbl~  ~Worldmap~
+   APPEND_FILE ~SOS/Worldmap/links.tbl~
+
+  COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
+   APPEND_FILE ~SOS/Worldmap/%LANGUAGE%/worldmap.tra~
+END
+ELSE BEGIN
+  MKDIR ~Worldmap~
+  COPY ~SOS/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
+  COPY ~SOS/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
+  COPY ~SOS/Worldmap/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+END
+
+COMPILE EVALUATE_BUFFER ~SOS/D~
+COMPILE EVALUATE_BUFFER ~SOS/D2~
+
+COMPILE EVALUATE_BUFFER ~SOS/Compat/SoS/aRIBALD.d~
+
+COPY_EXISTING ~Gaelan.dlg~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~SetGlobalTimer("ImoenDream1","GLOBAL",ONE_DAY)~
+						  ~SetGlobalTimer("ImoenDream1","GLOBAL",ONE_DAY)
+						  SetGlobal("CBGaelanafterSlum","GLOBAL",1)~
+	END
+
+INCLUDE ~%MOD_FOLDER%/lib/install-arescripts.tpa~
+
+INCLUDE ~%MOD_FOLDER%/lib/install-wed.tpa~
+
+COMPILE EVALUATE_BUFFER ~SOS/BAF~
+
+INCLUDE ~%MOD_FOLDER%/lib/install-cre.tpa~
+
+INCLUDE ~%MOD_FOLDER%/lib/install-itm.tpa~
+
+COPY + ~SoS/Compat/SoS/SPWI429.spl~          ~override~
+  SAY NAME1 @20651
+  SAY UNIDENTIFIED_DESC @20652
+
+COPY + ~SoS/Compat/SoS/SPRB005A.bam~          ~override~
+       ~SoS/Compat/SoS/SPRB005B.bam~          ~override~
+       ~SoS/Compat/SoS/SPRB005C.bam~          ~override~
+
+COPY + ~SoS/SPL/Copy~                 ~override~
+
+COPY + ~SoS/SPL/CBBRCRVA.spl~         ~override~
+
+COPY + ~SoS/SPL/CBBRCRVB.spl~         ~override~
+  SAY NAME1 @20757
+
+COPY + ~SoS/SPL/CBBRNOIL.spl~         ~override~
+
+COPY + ~SoS/SPL/CB300SLT.spl~         ~override~
+  SAY NAME1 @20758
+
+COPY + ~SoS/SPL/CB4330CT.spl~         ~override~
+  SAY NAME1 @20759
+  SAY 0xfe @20760
+
+COPY + ~SoS/SPL/CBDRGDP1.spl~         ~override~
+  SAY NAME1 @20761
+
+COPY + ~SoS/SPL/CBRVCH.spl~           ~override~
+  SAY NAME1 @20762
+  SAY 0xce @20763 
+
+COPY + ~SoS/STO/CB351GD1.sto~         ~override~
+  SAY NAME2 @20765 
+
+COPY + ~SoS/STO/CB4279ST.sto~         ~override~
+  SAY NAME2 @20766 
+
+COPY + ~SoS/STO/CB4280ST.sto~         ~override~       
+  SAY NAME2 @20767 
+
+COPY + ~SoS/STO/CB4281ST.sto~         ~override~       
+  SAY NAME2 @20768 
+
+COPY + ~SoS/STO/CBCHANT1.sto~         ~override~
+  SAY NAME2 @20079 
+
+COPY + ~SoS/STO/CBLOCKER.sto~         ~override~
+  SAY NAME2 @20612 
+
+COPY + ~SoS/STO/CBRJR03A.sto~         ~override~
+  SAY NAME2 @20677 
+
+COPY + ~SoS/STO/CBSBIN62.sto~         ~override~
+  SAY NAME2 @20769 
+
+COPY + ~SoS/STO/CBSBIN64.sto~         ~override~       
+  SAY NAME2 @20770 
+
+COPY + ~SoS/STO/CBSBIN67.sto~         ~override~       
+  SAY NAME2 @20771 
+
+COPY + ~SoS/STO/CBSBIN71.sto~         ~override~       
+  SAY NAME2 @20772 
+
+COPY + ~SoS/STO/CBSBIN72.STO~         ~override~
+  SAY NAME2 @20244 
+
+COPY + ~SoS/STO/CBSBIN7A.sto~         ~override~
+       ~SoS/STO/CBSBIN7B.sto~         ~override~
+  SAY NAME2 @20773 
+
+COPY + ~SoS/STO/CBSBWT67.sto~         ~override~       
+  SAY NAME2 @20774
+
+COPY + ~SoS/STO/CBSBWU67.sto~         ~override~       
+  SAY NAME2 @20771
+  SAY 0xa4 @20775
+  SAY 0xb8 @20776
+  SAY 0xcc @20777
+  SAY 0xe0 @20778
+  SAY 0xf4 @20779
+  SAY 0x108 @20780
+  SAY 0x11c @20781
+  SAY 0x130 @20782
+  SAY 0x144 @20783
+  SAY 0x158 @20784
+  SAY 0x16c @20785
+
+COPY + ~SoS/STO/CBSLENCE.sto~         ~override~
+  SAY NAME2 @20786
+
+COPY + ~SoS/STO/CBTRVBAG.sto~         ~override~
+  SAY NAME2 @20715 
+
+COPY + ~SoS/STO/CBWBBUY1.sto~         ~override~
+  SAY NAME2 @20787 
+
+COPY + ~SoS/STO/CBWBTEST.sto~         ~override~
+  SAY NAME2 @20787 
+  SAY 0xa4 @20729
+  SAY 0xb8 @20728
+  SAY 0xcc @20788
+  SAY 0xe0 @20789
+  SAY 0xf4 @20790
+  SAY 0x108 @20791
+  SAY 0x11c @20731
+  SAY 0x130 @20730
+  SAY 0x144 @20792
+  SAY 0x158 @20793
+  SAY 0x16c @20735
+  SAY 0x180 @20733
+  SAY 0x194 @20794
+  SAY 0x1a8 @20795
+  SAY 0x1bc @20744
+  SAY 0x1d0 @20727
+  SAY 0x1e4 @20725
+  SAY 0x1f8 @20796
+  SAY 0x20c @20797
+  SAY 0x220 @20798
+  SAY 0x234 @20799
+  SAY 0x248 @20736
+  SAY 0x25c @20734
+  SAY 0x270 @20732
+  
+  COPY ~SoS/STO/CBW2616.STO~         ~override~
+  SAY 0xc ~Winthrop's Inn~
+
+
+	ACTION_FOR_EACH var IN bam BEGIN
+		ACTION_BASH_FOR ~SoS/anim/Yeti~ ~^.+\.%var%$~ BEGIN
+			OUTER_PATCH_SAVE newname ~%BASH_FOR_FILE%~ BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~MLIC~ ~MYET~
+			END
+			ACTION_IF NOT FILE_EXISTS_IN_GAME ~%newname%~ BEGIN
+				COPY ~%BASH_FOR_FILESPEC%~ ~override/%newname%~
+			END
+		END
+	END
+	ACTION_BASH_FOR ~SoS/anim/Yeti~ ~^.+\.ogg$~ BEGIN
+		ACTION_IF NOT FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.wav~ BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~SoS/ogg2~
+		END
+	END
+  COPY + ~SoS/CRE/CBSSYETI.cre~         ~override~
+		SAY NAME1 @20288
+		SAY NAME2 @20288
+		WRITE_LONG 0x28 0xE25D
+	BUT_ONLY_IF_IT_CHANGES
+
+
+	ACTION_FOR_EACH var IN bam BEGIN
+		ACTION_BASH_FOR ~Sos/anim/Remorhaz~ ~^.+\.%var%$~ BEGIN
+			OUTER_PATCH_SAVE newname ~%BASH_FOR_FILE%~ BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~MBRH~ ~MREM~
+			END
+			ACTION_IF NOT FILE_EXISTS_IN_GAME ~%newname%~ BEGIN
+				COPY ~%BASH_FOR_FILESPEC%~ ~override/%newname%~
+			END
+		END
+	END
+	ACTION_BASH_FOR ~Sos/anim/Remorhaz~ ~^.+\.ogg$~ BEGIN
+		ACTION_IF NOT FILE_EXISTS_IN_GAME ~%BASH_FOR_RES%.wav~ BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~SoS/ogg2~
+		END
+	END
+	COPY + ~SoS/CRE/CBTWRMGR.cre~         ~override~
+		SAY NAME1 @20340
+		SAY NAME2 @20340
+		WRITE_LONG 0x28 0xE253
+	
+	COPY + ~SoS/CRE/CBTWRMLS.cre~         ~override~
+		SAY NAME1 @20341
+		SAY NAME2 @20341
+		WRITE_LONG 0x28 0xE253
+
+INCLUDE ~%MOD_FOLDER%/lib/cheat_var.tph~
+	
+
+ADD_KIT ~FENCE~
+~FENCE                   1           1           1           1           1           0           0           0~
+~FENCE 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2 ~
+~FENCE                   0       9       0       12      0       15~
+~FENCE                   0       0       0       0       -2      2~
+~FENCE                   0       17      0       17      0       17~
+~FENCE                   0       15      0       15      0       15~
+~FENCE                   0       1       1       1       1       1       1       1       1~
+~FENCE                   1       0       1       1       0       0~
+~SOS/RULE/CLABFNCE.2DA~
+~~
+~0x00080000 4~
+~Th0~
+~ LEAT14  *  *  BAG28  RING06  RING05,10  *  BOOT02  AMUL19  BRAC16  BELT06  AROW11,40  BULL03,40  BOLT06,40  POTN52,5  POTN04,2  POTN14,5  DAGG12  SW1H28  STAF08 ~
+SAY ~Fence~
+SAY ~Fence~
+SAY @20802
+
+	INCLUDE ~SOS/lib/fl#add_kit_ee.tpa~
+	LAF fl#add_kit_ee
+	INT_VAR
+		briefdesc = RESOLVE_STR_REF (@20802)
+	STR_VAR
+		kit_name = fence
+		clswpbon = ~0 0 3~
+		numwslot = ~2~
+		thiefskl = ~40 20~
+		traplimt = ~6~
+		clascolr = ~24 99 169 2 93~
+		clasiskl = ~0 0 0 0 0 0 0~
+		clasthac = ~0~
+		thiefscl = ~100 100 100 100 100 100 100 0~
+		hpclass  = ~hprog~
+		clsrcreq = ~1 1 1 1 1 1 1~
+	END
+
+COPY + ~SoS/SPL/CBFENCE5.spl~         ~override~
+       ~SoS/SPL/CBFNCE2.spl~          ~override~
+       ~SoS/SPL/CBFNCE3.spl~          ~override~
+
+COPY + ~SoS/SPL/CBFNCE4.spl~          ~override~
+  SAY NAME1 @20803
+
+COPY + ~SoS/CRE/SELENC07.cre~         ~override~
+       ~SoS/CRE/SELENC09.cre~         ~override~
+       ~SoS/CRE/SELENC12.cre~         ~override~
+       ~SoS/CRE/SELENC17.cre~         ~override~
+   SAY NAME1 @20804
+   SAY NAME2 @20805
+   SAY 0x1cc @20806
+
+    PATCH_IF (GAME_IS ~bg2ee eet~) BEGIN
+	SET bm_idx=0xffffffff
+	INNER_ACTION BEGIN
+		COPY_EXISTING + ~KITLIST.2DA~  ~override~
+			COUNT_2DA_ROWS 9 "rows_cnt"
+			FOR( cnt=0; cnt<"%rows_cnt%"; cnt=cnt+1 ) BEGIN
+			READ_2DA_ENTRY cnt 1 9 "kit_name"
+			READ_2DA_ENTRY cnt 0 9 "num"
+			PATCH_IF( ("%kit_name%" STRING_COMPARE_CASE "Fence")=0 ) BEGIN
+				SET bm_idx = num
+			END
+			END
+	END
+	PATCH_IF( bm_idx>=0 ) BEGIN
+	 	WRITE_LONG 0x244 (((0x4000 | bm_idx) * 0x10000))
+    END
+	
+   END
+   
+MKDIR ~SoS/biff~
+	  ~SoS/language/%LANGUAGE%/ogg1~
+
+ACTION_BASH_FOR ~SoS/language/english/ogg1~ ~^.+\.ogg$~ BEGIN
+	ACTION_IF NOT FILE_EXISTS ~SoS/language/%LANGUAGE%/ogg1/%BASH_FOR_FILE%~ BEGIN
+		COPY ~%BASH_FOR_FILESPEC%~ ~SoS/language/%LANGUAGE%/ogg1~
+	END
+END
+
+LAF HANDLE_AUDIO
+	STR_VAR
+	audio_path = EVAL ~SoS/language/%LANGUAGE%/ogg1~
+	oggdec_path = ~SoS/bin/win32~
+	sox_path = ~SoS/bin/osx~
+	output_path = ~override~
+END
+
+LAF HANDLE_AUDIO
+  STR_VAR
+    audio_path = ~SoS/ogg2~
+    oggdec_path = ~SoS/bin/win32~
+	sox_path = ~SoS/bin/osx~
+	output_path = ~override~
+END
+
+COPY ~SOS\Pvrz~ ~override~
+COPY ~SoS/MVE~ ~override~
+
+
+
+
+	

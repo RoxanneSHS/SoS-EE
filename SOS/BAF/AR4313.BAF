@@ -1,0 +1,31 @@
+IF
+  Global("CbRolfCreatedHere","AR4313",0)
+  Exists("CBROLFSB")
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,Wait(3))
+    ActionOverride(Player2,Wait(3))
+    ActionOverride(Player3,Wait(3))
+    ActionOverride(Player4,Wait(3))
+    ActionOverride(Player5,Wait(3))
+    ActionOverride(Player6,Wait(3))
+    SetGlobal("CbRolfCreatedHere","AR4313",1)
+END
+
+IF
+  Global("CbRolfCreatedHere","AR4313",1)
+  Dead("CBROLFSB")
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    StartCutSceneMode()
+    FadeToColor([20.0],0)
+    Wait(1)
+    SetGlobal("CbRolfCreatedHere","AR4313",2)
+    SetGlobal("CbTextScreenPlayed","AR4313",1)
+    SetGlobal("CbPartyHasKilledAllBandits","GLOBAL",3)
+    EndCutSceneMode()
+    SmallWait(1)
+END
+
+

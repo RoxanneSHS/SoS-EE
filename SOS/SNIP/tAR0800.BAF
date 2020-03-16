@@ -1,0 +1,20 @@
+IF
+	Global("CbSelenceOpensGraveyard","AR0800",0)
+	Global("CbFenceOperation","AR0800",0)
+THEN
+	RESPONSE #100
+	SetGlobal("CbFenceOperation","AR0800",1)
+		TriggerActivation("CbFenceOperation",FALSE)
+ 	        Continue()
+END
+
+IF
+	Global("CbSelenceOpensGraveyard","AR0800",1)
+	Global("CbFenceOperation","AR0800",1)
+THEN
+	RESPONSE #100
+	SetGlobal("CbFenceOperation","AR0800",2)
+		TriggerActivation("CbFenceOperation",TRUE)
+END
+
+
