@@ -42,3 +42,20 @@ THEN
  	        Continue()
 END
 
+IF
+Global("CbPlayerCanGoToSoubar","GLOBAL",3)
+Global("CbPartyHelpsSoubar","GLOBAL",1)
+!InMyArea("CBUHGVCT")
+THEN
+RESPONSE #100
+CreateCreature("CBUHGVCT",[3784.3031],7)
+END
+
+IF
+Global("CbPlayerCanGoToSoubar","GLOBAL",3)
+Global("CbPartyHelpsSoubar","GLOBAL",1)
+!InMyArea("CBUHAKCT")
+THEN
+RESPONSE #100
+CreateCreature("CBUHAKCT",[3860.2996],6)
+END

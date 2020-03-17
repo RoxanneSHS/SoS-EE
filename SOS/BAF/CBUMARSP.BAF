@@ -2,7 +2,7 @@ IF
   True()
 THEN
   RESPONSE #100
-    CutSceneId(Player1)  // 
+    CutSceneId(Player1)
     SetGlobal("CbContactsAboutToMove","AR1105",1)
     ActionOverride("CBUHGVCT",MoveToObject("UHINN01"))
     Wait(5)
@@ -16,7 +16,7 @@ THEN
     FadeFromColor([40.0],0)
     StartMovie("RESTINN")
     Wait(6)
-    SetGlobal("CbPartyHelpsSoubar","AR4219",9)
+    SetGlobal("CbPartyHelpsSoubar","AR1105",9)
     SetGlobal("CbPlayerCanGoToSoubar","GLOBAL",3)
     EndCutSceneMode()
 END

@@ -1,319 +1,187 @@
 BEGIN ~CBUHAKCT~
+BEGIN ~CBUHGVCT~
 
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",0)~ THEN BEGIN 0
-  SAY @0 
-  IF ~~ THEN DO ~SetGlobal("CbStopVinnieAndBoy","GLOBAL",1)
-SetGlobal("CbTownCouncilWithPlayer","GLOBAL",1)
-ActionOverride("CBUHGVCT",StartDialogNoSet("CBUHAKCT"))~ EXIT
+CHAIN
+IF ~Global("CbTownCouncilWithPlayer","GLOBAL",0)~ THEN CBUHAKCT Arvin0
+@0
+DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",1)~
+==CBUHGVCT @2000
+==CBUHAKCT @1
+==CBUHAKCT @56
+==CBUHGVCT @2001
+==CBUHGVCT @2002
+==CBUHGVCT @20062
 END
+++ @20063 DO ~SetGlobal("CbSoubarContactsInitiateDialog","AR1105",10)~ EXTERN CBUHGVCT V48
+++ @20064 DO ~SetGlobal("CbSoubarContactsInitiateDialog","AR1105",10)~ EXTERN CBUHGVCT V50
+++ @20065 DO ~SetGlobal("CbSoubarContactsInitiateDialog","AR1105",10)~ EXTERN CBUHGVCT V51
 
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",2)~ THEN BEGIN 1
-  SAY @1 
-  IF ~~ THEN GOTO 46
+CHAIN
+IF~~ THEN CBUHGVCT V48
+@20066
+==CBUHGVCT @20067
+==CBUHAKCT @2
+==CBUHAKCT @3
+==CBUHAKCT @4
+==CBUHAKCT @5
+==CBUHAKCT @6
+==CBUHGVCT @2005
+==CBUHGVCT @2006
+==CBUHAKCT @8
+==CBUHAKCT @9
+==CBUHAKCT @10
+==CBUHAKCT @11
+==CBUHAKCT @12
+==CBUHAKCT @13
+==CBUHAKCT @14
+==CBUHAKCT @15
+==CBUHAKCT @16
+==CBUHAKCT @17
+==CBUHAKCT @18
+==CBUHGVCT @20021
 END
+++ @20022 EXTERN CBUHGVCT V18
+++ @20023 EXTERN CBUHAKCT A22
+++ @20024 EXTERN CBUHGVCT V22
 
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",5)~ THEN BEGIN 2
-  SAY @2 
-  IF ~~ THEN GOTO 3
+CHAIN
+IF~~ THEN CBUHGVCT V18
+@20025
+==CBUHGVCT @20026
+==CBUHGVCT @20027
+==CBUHAKCT @22
+DO ~SetGlobal("CbPlayerCanGoToSoubar","GLOBAL",77) ActionOverride("CBUHAKCT",EscapeArea()) ActionOverride("CBUHGVCT",EscapeArea())~ EXIT
+
+CHAIN
+IF~~ THEN CBUHGVCT V50
+@20068
+DO~SetGlobal("CbPlayerTurnedDownGaius","ar1105",1)~EXIT
+
+CHAIN
+IF~~ THEN CBUHGVCT V51
+@20069
+DO~SetGlobal("CbPlayerTurnedDownGaius","ar1105",1)~EXIT
+
+CHAIN
+IF~~ THEN CBUHAKCT A22
+@23
+==CBUHAKCT @24
+==CBUHAKCT @25
+==CBUHAKCT @26
 END
+++ @27 + A23
+++ @28 + A26
 
-IF ~~ THEN BEGIN 3 // from: 2.0
-  SAY @3 
-  IF ~~ THEN GOTO 4
-END
+CHAIN
+IF ~~ THEN CBUHAKCT A23
+@23
+==CBUHAKCT @22
+DO ~SetGlobal("CbPlayerCanGoToSoubar","GLOBAL",77) ActionOverride("CBUHAKCT",EscapeArea()) ActionOverride("CBUHGVCT",EscapeArea())~ EXIT
 
-IF ~~ THEN BEGIN 4 // from: 3.0
-  SAY @4 
-  IF ~~ THEN GOTO 5
-END
-
-IF ~~ THEN BEGIN 5 // from: 4.0
-  SAY @5 
-  IF ~~ THEN GOTO 6
-END
-
-IF ~~ THEN BEGIN 6 // from: 5.0
-  SAY @6 
-  IF ~~ THEN GOTO 7
-END
-
-IF ~~ THEN BEGIN 7 // from: 6.0
-  SAY @7 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",6)
-ActionOverride("CBUHGVCT",StartDialogNoSet("CBVINNIE"))~ EXIT
-END
-
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",14)
-AreaCheck("AR4219")~ THEN BEGIN 8
-  SAY @8 
-  IF ~~ THEN GOTO 9
-END
-
-IF ~~ THEN BEGIN 9 // from: 8.0
-  SAY @9 
-  IF ~~ THEN GOTO 10
-END
-
-IF ~~ THEN BEGIN 10 // from: 9.0
-  SAY @10 
-  IF ~~ THEN GOTO 11
-END
-
-IF ~~ THEN BEGIN 11 // from: 10.0
-  SAY @11 
-  IF ~~ THEN GOTO 12
-END
-
-IF ~~ THEN BEGIN 12 // from: 11.0
-  SAY @12 
-  IF ~~ THEN GOTO 13
-END
-
-IF ~~ THEN BEGIN 13 // from: 12.0
-  SAY @13 
-  IF ~~ THEN GOTO 14
-END
-
-IF ~~ THEN BEGIN 14 // from: 13.0
-  SAY @14 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",15)
-ActionOverride("CBVINNIE",JumpToPoint([947.319]))
-SetGlobal("CbSoubarContactsInitiateDialog","AR4219",33)
-ActionOverride("CBVINNIE",StartDialogueNoSet("CBUHAKCT")~ EXIT
-END
-
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",18)
-AreaCheck("AR4219")~ THEN BEGIN 15
-  SAY @15 
-  IF ~~ THEN GOTO 16
-END
-
-IF ~~ THEN BEGIN 16 // from: 15.0
-  SAY @16 
-  IF ~~ THEN GOTO 17
-END
-
-IF ~~ THEN BEGIN 17 // from: 16.0
-  SAY @17 
-  IF ~~ THEN GOTO 18
-END
-
-IF ~~ THEN BEGIN 18 // from: 17.0
-  SAY @18 
-  IF ~~ THEN REPLY @19 GOTO 19
-END
-
-IF ~~ THEN BEGIN 19 // from: 18.0
-  SAY @20
-  IF ~~ THEN GOTO 20
-END
-
-IF ~~ THEN BEGIN 20 // from: 19.0
-  SAY @21 
-  IF ~~ THEN GOTO 47
-END
-
-IF ~Global("CbSoubarContactsInitiateDialog","AR4219",42)
-Global("CbGvAndAkLeave","AR4219",2)
-AreaCheck("AR4219")~ THEN BEGIN 21
-  SAY @22 
-  IF ~~ THEN DO ~SetGlobal("CbGvAndAkLeave","AR4219",3)~ EXIT
-END
-
-IF ~GlobalLT("CbTownCouncilWithPlayer","GLOBAL",21)
-Global("CbPartyWantsMoneyFromSoubar","AR4219",1)
-AreaCheck("AR4219")~ THEN BEGIN 22
-  SAY @23 
-  IF ~~ THEN GOTO 23
-END
-
-IF ~~ THEN BEGIN 23 // from: 22.0
-  SAY @24 
-  IF ~~ THEN GOTO 24
-END
-
-IF ~~ THEN BEGIN 24 // from: 23.0
-  SAY @25 
-  IF ~~ THEN GOTO 25
-END
-
-IF ~~ THEN BEGIN 25 // from: 24.0
-  SAY @26 
-  IF ~~ THEN REPLY @27 DO ~SetGlobal("CbGvAndAkLeave","AR4219",1)~ EXIT
-  IF ~~ THEN REPLY @28 GOTO 26
-END
-
-IF ~~ THEN BEGIN 26 // from: 25.1
-  SAY @29 
-  IF ~~ THEN REPLY @30 DO ~SetGlobal("CbPartyWantsMoneyFromSoubar","AR4219",3)
-SetGlobal("CbPartyHelpsSoubar","AR4219",1)~ EXIT
-  IF ~~ THEN REPLY @27 DO ~SetGlobal("CbGvAndAkLeave","AR4219",1)~ EXIT
-END
-
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",20)
-Global("CbPartyHelpsSoubar","AR4219",1)~ THEN BEGIN 27
-  SAY @31 
-  IF ~~ THEN GOTO 48
-END
-
-IF ~GlobalGT("CbTownCouncilWithPlayer","GLOBAL",20)
-GlobalLT("CbTownCouncilWithPlayer","GLOBAL",24)~ THEN BEGIN 28
-  SAY @32 
-  IF ~~ THEN DO ~SetGlobal("CbVinnyHasDinner","AR4219",5)
-SetGlobal("CbPartyHelpsSoubar","AR4219",4)~ EXIT
-END
-
-IF ~Global("CbTownCouncilWithPlayer","GLOBAL",24)~ THEN BEGIN 29
-  SAY @33 
-  IF ~~ THEN REPLY @34 GOTO 49
-  IF ~~ THEN REPLY @35 GOTO 51
-  IF ~~ THEN REPLY @36 GOTO 53
-  IF ~~ THEN REPLY @37 GOTO 54
-END
-
-IF ~AreaCheck("AR1100")
-Global("CbPartyHelpsSoubar","GLOBAL",1)~ THEN BEGIN 30
-  SAY @38 
-  IF ~~ THEN REPLY @39 GOTO 31
-END
-
-IF ~~ THEN BEGIN 31 // from: 30.0
-  SAY @40 
-  IF ~~ THEN DO ~RevealAreaOnMap("AR4220")~ GOTO 32
-END
-
-IF ~~ THEN BEGIN 32 // from: 31.0
-  SAY @41 
-  IF ~~ THEN DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",2)~ EXIT
-END
-
-IF ~AreaCheck("AR1100")
-Global("CbPartyHelpsSoubar","GLOBAL",2)~ THEN BEGIN 33
-  SAY @42 
-  IF ~~ THEN REPLY @43 GOTO 34
-  IF ~~ THEN REPLY @44 GOTO 39
-END
-
-IF ~~ THEN BEGIN 34 // from: 33.0
-  SAY @45 
-  IF ~!InParty("SELENCE")~ THEN GOTO 35
-  IF ~InParty("SELENCE")~ THEN GOTO 38
-END
-
-IF ~~ THEN BEGIN 35 // from: 34.0
-  SAY @46 
-  IF ~~ THEN GOTO 36
-END
-
-IF ~~ THEN BEGIN 36 // from: 35.0
-  SAY @47 
-  IF ~~ THEN GOTO 37
-END
-
-IF ~~ THEN BEGIN 37 // from: 36.0
-  SAY @48 
-  IF ~~ THEN DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3)
-ActionOverride("CBUHGVCT",EscapeArea())
-EscapeArea()
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 38 // from: 34.1
-  SAY @48 
-  IF ~~ THEN DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3)
-ActionOverride("CBUHGVCT",EscapeArea())
-EscapeArea()~ EXIT
-END
-
-IF ~~ THEN BEGIN 39 // from: 33.1
-  SAY @49 
-  IF ~~ THEN GOTO 40
-END
-
-IF ~~ THEN BEGIN 40 // from: 39.0
-  SAY @50 
-  IF ~~ THEN DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3)
+CHAIN
+IF ~~ THEN CBUHGVCT V22
+@20031
+==CBUHGVCT @20032
+==CBUHGVCT @20072
+DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",25)
+SetGlobal("CbPartyHelpsSoubar","GLOBAL",1)
 ClearAllActions()
 StartCutSceneMode()
-StartCutScene("CBCARRGE")~ EXIT
-END
+StartCutScene("CBUMARSP")~ EXIT
 
-IF ~AreaCheck("AR4220")
-Global("CbPartyHelpsSoubar","AR4220",12)~ THEN BEGIN 41
-  SAY @51 
-  IF ~~ THEN GOTO 42
+CHAIN
+IF ~~ THEN CBUHAKCT A26
+@29
 END
+++ @30 EXTERN CBUHGVCT V22
+++ @27 + A23
 
-IF ~~ THEN BEGIN 42 // from: 41.0
-  SAY @52 
-  IF ~~ THEN GOTO 43
+CHAIN
+IF ~Global("CbPlayerTurnedDownGaius","ar1105",1)~ THEN CBUHGVCT V41
+@20053
 END
+++ @20054 + V42
 
-IF ~~ THEN BEGIN 43 // from: 42.0
-  SAY @53 
-  IF ~~ THEN GOTO 44
+CHAIN
+IF ~~ THEN CBUHGVCT V42
+@20055 
 END
+++ @20056 + V43
 
-IF ~~ THEN BEGIN 44 // from: 43.0
-  SAY @54 
-  IF ~~ THEN GOTO 45
-END
+CHAIN
+IF ~~ THEN CBUHGVCT V43
+@20057  DO ~SetGlobal("CbPlayerTurnedDownGaius","ar1105",2)~ EXIT
 
-IF ~~ THEN BEGIN 45 // from: 44.0
-  SAY @55 
-  IF ~~ THEN DO ~SetGlobal("CbPartyHelpsSoubar","AR4220",13)
-ActionOverride("CBUHGVCT",EscapeArea())
-EscapeArea()~ EXIT
+CHAIN
+IF ~Global("CbPlayerTurnedDownGaius","ar1105",2)~ THEN CBUHGVCT V44
+@20058
 END
+++ @20059 + V45
 
-IF ~~ THEN BEGIN 46 // from: 1.0
-  SAY @56 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",3)
-ActionOverride("CBUHGVCT",StartDialogNoSet("CBUHAKCT"))~ EXIT
+CHAIN
+IF ~~ THEN CBUHGVCT V45
+@20060
+==CBUHGVCT @20061
 END
+++ @20063 DO ~SetGlobal("CbSoubarContactsInitiateDialog","AR1105",10)SetGlobal("CbPlayerTurnedDownGaius","ar1105",3)~ EXTERN CBUHGVCT V48
 
-IF ~~ THEN BEGIN 47 // from: 20.0
-  SAY @57 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",19)
-ActionOverride("CBUHGVCT",StartDialogNoSet(Player1))~ EXIT
+CHAIN
+IF ~AreaCheck("AR1100") Global("CbPartyHelpsSoubar","GLOBAL",1)~ THEN CBUHAKCT A30
+@38
 END
+++ @39 + A31
 
-IF ~~ THEN BEGIN 48 // from: 27.0
-  SAY @58 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",21)
-SetGlobal("CbVinnyHasDinner","AR4219",2)
-ActionOverride("CBVINNIE",JumpToPoint([947.319]))
-ActionOverride("CBVINNIE",StartDialogueNoSet("CBUHGVCT"))~ EXIT
+CHAIN
+IF ~AreaCheck("AR1100") Global("CbPartyHelpsSoubar","GLOBAL",1)~ THEN CBUHGVCT V30
+@20040
 END
+++ @20041 EXTERN CBUHAKCT A31
 
-IF ~~ THEN BEGIN 49 // from: 29.0
-  SAY @59 
-  IF ~~ THEN GOTO 50
+CHAIN
+IF ~~ THEN CBUHAKCT A31
+@40
+DO ~RevealAreaOnMap("AR4220")~
+==CBUHAKCT @41
+DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",2)~
+==CBUHAKCT @42
 END
+++ @43 + A34
+++ @44 + A39
 
-IF ~~ THEN BEGIN 50 // from: 49.0
-  SAY @60 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",24)
-ActionOverride("CBUHGVCT",StartDialogNoSet(Player1))~ EXIT
+CHAIN
+IF ~~ THEN CBUHAKCT A34
+@45
 END
+IF ~!InParty("SELENCE")~ THEN GOTO A35
+IF ~InParty("SELENCE")~ THEN GOTO A38
 
-IF ~~ THEN BEGIN 51 // from: 29.1
-  SAY @61 
-  IF ~~ THEN GOTO 52
-END
+CHAIN
+IF ~~ THEN CBUHAKCT A35
+@46
+==CBUHAKCT @47
+==CBUHAKCT @48
+DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3)ActionOverride("CBUHGVCT",EscapeArea()) EscapeArea() ~ EXIT
 
-IF ~~ THEN BEGIN 52 // from: 51.0
-  SAY @60 
-  IF ~~ THEN DO ~SetGlobal("CbTownCouncilWithPlayer","GLOBAL",24)
-ActionOverride("CBUHGVCT",StartDialogNoSet(Player1))~ EXIT
-END
+CHAIN
+IF ~~ THEN CBUHAKCT A38
+@48
+DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3) ActionOverride("CBUHGVCT",EscapeArea()) EscapeArea()~ EXIT
 
-IF ~~ THEN BEGIN 53 // from: 29.2
-  SAY @62 
-  IF ~~ THEN EXIT
-END
+CHAIN
+IF ~~ THEN CBUHAKCT A39
+@49
+==CBUHAKCT @50
+DO ~SetGlobal("CbPartyHelpsSoubar","GLOBAL",3) ClearAllActions() StartCutSceneMode()StartCutScene("CBCARRGE")~ EXIT
 
-IF ~~ THEN BEGIN 54 // from: 29.3
-  SAY @63 
-  IF ~~ THEN EXIT
-END
+CHAIN
+IF ~AreaCheck("AR4220") Global("CbPartyHelpsSoubar","AR4220",12)~ THEN CBUHAKCT 41
+@51
+==CBUHAKCT @52
+==CBUHAKCT @53
+==CBUHAKCT @54
+==CBUHAKCT @55
+DO ~SetGlobal("CbPartyHelpsSoubar","AR4220",13) ActionOverride("CBUHGVCT",EscapeArea()) EscapeArea()~ EXIT
+
+
+
+
