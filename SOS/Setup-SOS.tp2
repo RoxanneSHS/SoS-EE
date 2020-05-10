@@ -2,7 +2,7 @@ BACKUP ~SOS/BACKUP~
 
 AUTHOR ~Charles Bisson, Horred The Plague (WeiDU), King Diamond (WeiDU revision), Weigo + Roxanne (EE revision)~  NO_IF_EVAL_BUG
 
-VERSION ~v3~
+VERSION ~v3.01~
 
 AUTO_TRA ~SOS/Language/%s~
 
@@ -58,7 +58,7 @@ ALWAYS
 				noconvert_array = charsetsNoConvertArray
 			END
 		END
-		COPY ~%MOD_FOLDER%/Worldmap/%LANGUAGE%/fl#utf8_worldmap.tra~ ~%MOD_FOLDER%/Worldmap/%LANGUAGE%/worldmap.tra~
+
 		LOAD_TRA ~SoS/language/%LANGUAGE%/setup-ee.tra~
 	END
 END
@@ -422,6 +422,7 @@ COPY ~SoS/ARE/AR4360.are~           ~override~
     WRITE_ASCIIE 0x003c ~%NBaldursGate_RinniesHouse_L2%~ #8
 
 	COPY ~SoS/ARE/AR4365.are~           ~override~
+	
 
 ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
   COPY ~Worldmap/map_mods_areas.tbl~  ~Worldmap~
@@ -431,13 +432,13 @@ ACTION_IF FILE_EXISTS ~Worldmap/map_mods_areas.tbl~ THEN BEGIN
    APPEND_FILE ~SOS/Worldmap/links.tbl~
 
   COPY ~Worldmap/map_mods_trans.tra~  ~Worldmap~
-   APPEND_FILE ~SOS/Worldmap/%LANGUAGE%/worldmap.tra~
+   APPEND_FILE ~SOS/language/%LANGUAGE%/worldmap.tra~
 END
 ELSE BEGIN
   MKDIR ~Worldmap~
   COPY ~SOS/Worldmap/areas.tbl~ ~Worldmap/map_mods_areas.tbl~
   COPY ~SOS/Worldmap/links.tbl~ ~Worldmap/map_mods_links.tbl~
-  COPY ~SOS/Worldmap/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
+  COPY ~SOS/language/%LANGUAGE%/worldmap.tra~ ~Worldmap/map_mods_trans.tra~
 END
 
 COMPILE EVALUATE_BUFFER ~SOS/D~
