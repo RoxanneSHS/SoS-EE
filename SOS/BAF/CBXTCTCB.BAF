@@ -2,7 +2,10 @@ IF
   True()
 THEN
   RESPONSE #100
-    CutSceneId(Player1)  // 
+    CutSceneId(Player1)
+    SetGlobal("CbCeebIssonTheSpyEscaped","GLOBAL",1)
+    SetGlobal("CbASpyEscaped","GLOBAL",1)
+    Wait(1)
     CreateVisualEffectObject("SPDISPMA","CBISSON2")
     CreateVisualEffectObject("SPDISPMA","CBSPYRLF")
     Wait(1)
@@ -12,8 +15,6 @@ THEN
     ActionOverride("CBSPYRLF",ForceSpell("CBSPYRLF",DRYAD_TELEPORT))
     ActionOverride("CBSPYRLF",Wait(1))
     ActionOverride("CBSPYRLF",DestroySelf())
-    SetGlobal("CbCeebIssonTheSpyEscaped","GLOBAL",1)
-    SetGlobal("CbASpyEscaped","GLOBAL",1)
     EndCutSceneMode()
 END
 

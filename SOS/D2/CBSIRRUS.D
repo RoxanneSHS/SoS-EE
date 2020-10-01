@@ -374,8 +374,8 @@ END
 
 IF ~~ THEN BEGIN 66 // from: 65.0
   SAY @86
-  IF ~~ THEN REPLY @87 DO ~SetGlobal("CbPartyAccusedMayor","LOCALS",1)
-IncrementGlobal("CbOneSpyDown","GLOBAL",1)~ GOTO 40
+  IF ~~ THEN REPLY @87 DO ~IncrementGlobal("CbOneSpyDown","GLOBAL",1)Wait(1) SetGlobal("CbPartyAccusedMayor","LOCALS",1)
+~ GOTO 40
 END
 
 IF ~Global("CbPartyInvestigatesLeads","GLOBAL",4)
