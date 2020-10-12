@@ -1,0 +1,6 @@
+IF
+!Global("CbCharlotteII","GLOBAL",7)
+THEN
+RESPONSE #100
+SetGlobal("CbCharlotteII","GLOBAL",7)
+END

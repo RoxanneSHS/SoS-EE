@@ -2,7 +2,7 @@ BACKUP ~SOS/BACKUP~
 
 AUTHOR ~Charles Bisson, Horred The Plague (WeiDU), King Diamond (WeiDU revision), Weigo + Roxanne (EE revision)~  NO_IF_EVAL_BUG
 
-VERSION ~v3.01~
+VERSION ~v3.02~
 
 AUTO_TRA ~SOS/Language/%s~
 
@@ -739,7 +739,8 @@ END
 COPY ~SOS\Pvrz~ ~override~
 COPY ~SoS/MVE~ ~override~
 
-
+BEGIN ~Disable Charlotte's Lion~
+EXTEND_TOP ~Charlott.BCS~  ~SOS/SNIP/NoLionForCharl.baf~
 
 
 	
