@@ -1,10 +1,10 @@
-@0    = ~Lode a Chauntea!, la maestra benefattrice di tutto quello che nasce e si alimenta a Faerûn. Vieni, viandante, e sii il benvenuto in questo tempio consacrato alla Grande Madre. Cosa posso fare per te?~
+@0    = ~Lode a Chauntea!, la maestra benefattrice di tutto quello che nasce e si alimenta a Faerun. Vieni, viandante, e sii il benvenuto in questo tempio consacrato alla Grande Madre. Cosa posso fare per te?~
 @1    = ~Puoi parlarmi di Chauntea?~
 @2    = ~Sai qualcosa di chi ha attaccato le terre di questa regione?~
 @3    = ~Mi farebbe piacere vedere cosa offri.~
 @4    = ~Non ho bisogno di nulla grazie.~
 @5    = ~Puoi esaminare la nostra biblioteca, viandante. Tutto il sapere qui è di libero accesso a tutti, vedrai che apprenderai più di quello che potrei spiegarti io.~
-@6    = ~No, viandante, non so nulla. Ma noi tutti preghiamo affinché Chauntea li prenda con lei ed indicherà ai briganti il ciclo della natura e di come si dovrebbe vivere a Faerûn.~
+@6    = ~No, viandante, non so nulla. Ma noi tutti preghiamo affinché Chauntea li prenda con lei ed indicherà ai briganti il ciclo della natura e di come si dovrebbe vivere a Faerun.~
 @7    = ~Buon viandante! Desideri conoscere il sentiero di Chauntea, la Grande Madre? Posso insegnartela e istruirti!~
 @8    = ~Vieni, andiamo nel mio studio. Ti mostrerò il vantaggio di ottenere una lunga vita ben vissuta in armonia con il ciclo eterno della coltivazione  e della mietitura.~
 @9    = ~Perché non mi dici prima cosa vuoi sapere.~
@@ -31,7 +31,7 @@
 @30   = ~Come potrei diventare un membro del clero, se io lo volessi?~
 @31   = ~Non penso che potrei, non perché non voglia, ma perché non sarei in grado di eseguire gli incarichi che Chauntea mi darebbe.~
 @32   = ~Se tu vuoi seriamente unirti alla fede in Chauntean, dovresti parlare con uno dei sacerdoti superiori che saranno in grado di introdurti ai principi base della fede.~
-@33   = ~Penso che venerare Chauntea dovrebbe davvero essere una buona cosa per me, e per Faerûn. Lo farò. Dove posso trovare uno dei sacerdoti superiori?~
+@33   = ~Penso che venerare Chauntea dovrebbe davvero essere una buona cosa per me, e per Faerun. Lo farò. Dove posso trovare uno dei sacerdoti superiori?~
 @34   = ~Dato che la fede é più sentita nel Nord, ti suggerirei la diocesi di Silverymoon. Ci sono anche altre chiese abbastanza grandi fuori Waterdeep.~
 @35   = ~Non c'é più nulla che io possa fare per te, almeno fino a quando non troverai un sacerdote superiore che accetta di introdurti nella Chiesa e ti aiuterà ad accettare Chauntea nel tuo cuore.~
 @36   = ~Non capisco. La chiesa non è aperta a tutti. Vi auguro molta fortuna con la vostra fede, e spero che qualsiasi dio tu veneri ti garantisca la stessa forza che Chauntea mi ha garantito a me benedicendomi.~
