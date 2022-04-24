@@ -27,7 +27,7 @@ END
 
 IF
   !See([ENEMY])
-  GlobalGT("CbRecruiting","GLOBAL",1)
+  Global("CbRecruiting","GLOBAL",1)
   AreaCheck("AR4230")
   Detect([PC])
 THEN
@@ -37,7 +37,7 @@ END
 
 IF
   !See([ENEMY])
-  GlobalGT("CbRecruiting","GLOBAL",2)
+  Global("CbRecruiting","GLOBAL",2)
   Global("CbThisSoldierMovedIntoNarwhal","LOCALS",1)
   AreaCheck("AR4230")
   Detect([PC])
