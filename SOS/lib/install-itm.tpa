@@ -585,6 +585,8 @@ COPY + ~SoS/ITM/CBLOCKER.itm~         ~override~
 
 COPY + ~SoS/ITM/CBLOGMSS.itm~         ~override~
   SAY UNIDENTIFIED_DESC @20614 
+  SAY DESC @20614
+	
 
 COPY + ~SoS/ITM/CBLOLTH1.itm~         ~override~
 
