@@ -17,7 +17,7 @@
 @16   = ~Indeed I have.  But I have not had the chance to decide what Trademeet can do for the good Major, or the town of Soubar.~
 @17   = ~I shall have to discuss the matters discussed within with some of my associates here in Trademeet.~
 @18   = ~Everything is so political here, my hands are tied.  I cannot even think of what the nobles of Trademeet will allow me to do, and I do not want to delay you any further than I already have.~
-@19   = ~You will have to return to Soubar and the Major without an answer at this time, but please, I ask you to relay my own personal message, that I have recieved the missive and will take the threat he is under seriously.  Anything that is in my power to do, I will do for him and the town.~
+@19   = ~You will have to return to Soubar and the Major without an answer at this time, but please, I ask you to relay my own personal message, that I have received the missive and will take the threat he is under seriously.  Anything that is in my power to do, I will do for him and the town.~
 @20   = ~Be sure to let him know that I shall send a reply, and hopefully, with the cooperation of Trademeet's nobles, aid, within a ten-day.~
 @21   = ~He may not have that long to wait, so it is better for you to return as soon as you can.  Good luck on your journey.~
 @22   = ~Greetings again, <CHARNAME>.  I trust that your journeys go well?  Remember that you are always welcome in Trademeet.~
@@ -39,7 +39,7 @@
 @38   = ~It's only a common courtesy for you, <CHARNAME>.  With all that you've done for Trademeet, it's the least I can do.~
 @39   = ~So, what brings you back to Trademeet this time?~
 @40   = ~Logan, I'm having some trouble up at Soubar.  I've been trying to help out the town from brigands and bandits, and the Major of the militia asked me to bring you this letter, hoping you can help out.  Here, read the letter.~
-@41   = ~The Major of Soubar ordered me to bring you this letter, asking for you aid in helping him protect the town against bandits which are causing problems to the town, the neighboring communities, and the region in general.  Can you take a look at the letter?~
+@41   = ~The Major of Soubar ordered me to bring you this letter, asking for you aid in helping him protect the town against bandits which are causing problems to the town, the neighbouring communities, and the region in general.  Can you take a look at the letter?~
 @42   = ~I have this letter for you.  Why don't you take a look, and it'll explain everything.~
 @43   = ~By Torm!  <CHARNAME>, why didn't you say so in the first place?  Here, let me take a look.  Have a seat while I study the letter.~
 @44   = ~By Torm, <CHARNAME>, you should have said something first.  Let me see.  Have a seat here for a moment, and I'll take a look at the letter.~
@@ -52,11 +52,11 @@
 @51   = ~By Torm, <CHARNAME>, you should have said something about this first.  Let me see.  Have a seat here for a moment, and I'll take a look at the letter.~
 @52   = ~You could never interrupt me, <CHARNAME>.  Not even on my own deathbed would you be an intrusion.~
 @53   = ~Regretfully, no, <CHARNAME>.  You need to understand, however, that it's not my decision alone to make.  I'm going to need to speak to the nobles of Trademeet and get their approval before anything can be done.  That won't be an easy task.~
-@54   = ~I fear that there may be nothing Trademeet does for the town of Soubar, and that would indeed be a shame.  But it is not in my control.  I'm sorry, <CHARNAME>, but you're going to have to return to Trademeet without any help from me at this time.~
+@54   = ~I fear that there may be nothing Trademeet does for the town of Soubar, and that would indeed be a shame.  But it is not in my control.  I'm sorry, <CHARNAME>, but you're going to have to return to Soubar without any help from me at this time.~
 @55   = ~But please, let the Major know that I will do all in my power to assist him and his town in this hour of need.  I promise that I will send word to him as soon as I can, but I fear it may not be soon enough.~
 @56   = ~He may not have that long to wait, so it is better for you to return as soon as you can.~
 @57   = ~Good luck, <CHARNAME>, and take care of yourself.~
-@58   = ~How dare you profane my office again, murderer.  I was lenient once, but if you insist on inticing me to violence or retribution for the murders you've committed, believe me <CHARNAME>, I have no hesitation in prosecuting you to the fullest.~
+@58   = ~How dare you profane my office again, murderer.  I was lenient once, but if you insist on enticing me to violence or retribution for the murders you've committed, believe me <CHARNAME>, I have no hesitation in prosecuting you to the fullest.~
 @59   = ~Sorry to bother you Logan.~
 @60   = ~I've had just about enough of your insult remarks.  This time, you're going to be listening to what I have to say.~
 @61   = ~If you insult me one more time, Logan, Torm help me, I swear it will be the last time you say anything unjust to anyone again.~
