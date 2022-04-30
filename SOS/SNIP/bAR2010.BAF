@@ -19,3 +19,12 @@ THEN
 		CreateCreature("CBISSON1",[262.579],1)
 END
 
+IF
+Global("CbCreatedMyself","AR2010",1)
+GlobalGT("CbPartyInvestigatesLeads","GLOBAL",0)
+THEN
+	RESPONSE #100
+SetGlobal("CbCreatedMyself","AR2010",2)
+ActionOverride("CBIsson1",DestroySelf())
+END
+
