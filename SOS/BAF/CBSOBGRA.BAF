@@ -1,6 +1,7 @@
 IF
   See([PC])
   NumberOfTimesTalkedTo(0)
+  !Global("CbCloseToNarwhal","LOCALS",0)
   !Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100

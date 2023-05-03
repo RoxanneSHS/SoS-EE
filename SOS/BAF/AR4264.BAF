@@ -1,4 +1,13 @@
 IF
+Global("CbRecruiting","GLOBAL",1)
+PartyHasItem("CBMANCLE")
+THEN
+RESPONSE #100
+SetGlobal("CbRecruiting","GLOBAL",2)
+END
+
+
+IF
   Global("CbRecruiting","GLOBAL",2)
   Global("CbTrielMenCreated","AR4264",0)
 THEN
