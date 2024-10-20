@@ -1,4 +1,13 @@
 IF
+!Global("CbInvestigatedFighters","AR4285",5)
+Global("CbPartyInvestigatesLeads","GLOBAL",4)
+Global("CbSpyIs_Fighter","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("CbInvestigatedFighters","AR4285",5)
+END
+
+IF
   Global("CbASpyEscaped","GLOBAL",1)
   Global("CbBigRaidTimerSet","GLOBAL",0)
 THEN
